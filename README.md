@@ -325,6 +325,7 @@ certutil -addstore -f root c:\import\RootCA_ROOTCA-CA.crt
 certutil -addstore -f root c:\import\ROOTCA-CA.crl
 pause
 ```
+<img width="1337" height="921" alt="image" src="https://github.com/user-attachments/assets/982a18d5-c843-4143-8b92-d9c02deec1fd" />
 
 
 ### Step 2
