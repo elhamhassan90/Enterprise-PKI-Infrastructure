@@ -360,6 +360,30 @@ certreq -submit IssuingCA.EgyptSystems.local_IssuingCA.req
 <img width="1507" height="916" alt="image" src="https://github.com/user-attachments/assets/71fd96d6-4a06-4451-89d3-63629e848751" />
 
 Approve the pending request using the **Certification Authority** console.
+Open the **Certification Authority** console.
+
+Navigate to:
+
+```text
+Pending Requests
+```
+
+Locate the pending request from the **IssuingCA** server.
+
+Right-click the request and select:
+
+```text
+All Tasks
+│
+└── Issue
+```
+
+The request will be moved to:
+
+```text
+Issued Certificates
+```
+
 
 Issue the certificate.
 <img width="1632" height="878" alt="image" src="https://github.com/user-attachments/assets/72091290-b3a2-4755-abfc-4493f5a00449" />
@@ -370,15 +394,36 @@ Issue the certificate.
 
 <img width="1581" height="922" alt="image" src="https://github.com/user-attachments/assets/fae81d92-cf6f-4e16-b02e-9b494ae0f40e" />
 
-Copy the issued certificate back to the **IssuingCA** server.
+#### Copy the issued certificate back to the **IssuingCA** server.
+
+
+
+
+Retrieve the issued certificate.
+
+Open **Windows PowerShell** and run:
+
+```powershell
+certreq -retrieve 3 C:\IssuingCA.EgyptSystems.local_IssuingCA.crt
+```
+<img width="1240" height="920" alt="image" src="https://github.com/user-attachments/assets/1ff14dcb-48cf-44bb-88e1-9c8453d8fc7a" />
+
+> **Important**
+>
+> The value **3** is only an example.
+>
+> Use the actual **Request ID** assigned by your Certification Authority.
+
+The issued certificate will be saved as:
+
+```text
+C:\IssuingCA.EgyptSystems.local_IssuingCA.crt
+```
+
+<img width="1456" height="925" alt="image" src="https://github.com/user-attachments/assets/9517c7ab-8676-4f23-b090-f042086f2903" />
+
 
 Complete the Enterprise Issuing CA configuration.
-
-
-
-
-
-
 
 ---
 
