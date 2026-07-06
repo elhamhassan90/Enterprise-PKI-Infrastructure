@@ -159,15 +159,202 @@ Enterprise-PKI-Infrastructure/
 | Backup & Recovery | ⏳ |
 
 ---
+# Phase 1 - Offline Root Certification Authority
 
+- Install Active Directory Certificate Services (AD CS)
+- Configure a Standalone Offline Root Certification Authority
+- Generate the Root CA private key
+- Configure the CA database location
+- Configure the validity period
+- Configure CDP (CRL Distribution Point)
+- Configure AIA (Authority Information Access)
+- Restart Certificate Services
+- Export the Root CA Certificate
+- Backup the Root CA Private Key
 # Screenshots
 
 Project screenshots will be added during each deployment phase.
 <img width="1622" height="877" alt="image" src="https://github.com/user-attachments/assets/cfaba09d-9a84-4af7-b897-695efc996bc1" />
 <img width="1612" height="916" alt="image" src="https://github.com/user-attachments/assets/d8e2aa0e-259a-49f0-818c-e7bd60228dad" />
 
+<img width="1632" height="916" alt="image" src="https://github.com/user-attachments/assets/da5f0d62-9904-4e2e-9bbb-4df125c130c6" />
+
+
+# Phase 2 - Export Root CA Files
+
+- Export the Root CA Certificate
+- Export the Certificate Revocation List (CRL)
+- Copy exported files to C:\Export
+- Transfer exported files to the Issuing CA
+
+
+
+# Phase 3 - Enterprise Issuing Certification Authority
+
+- Import the Root CA Certificate
+- Trust the Root Certification Authority
+- Install Active Directory Certificate Services
+- Configure Enterprise Subordinate CA
+- Generate the Subordinate CA Request
+- Save the Request File
+- Transfer the Request File to the Root CAز
+
+
+
+
+
+
+# Phase 4 - Sign the Subordinate CA Request
+
+- Submit the Request using certreq
+- Approve the Pending Request
+- Issue the Subordinate CA Certificate
+- Copy the Issued Certificate back to the Issuing CA
+
+
+
+
+# Phase 5 - Complete Enterprise Issuing CA Configuration
+
+- Install the Issued CA Certificate
+- Start Certificate Services
+- Publish CRL
+- Verify Certificate Chain
+- Verify Enterprise PKI Health
+====================================================================================================================
+====================================================================================================================
+
+
+# Phase 1 - Configure Offline Root Certification Authority
+
+## Objectives
+
+- Install the Active Directory Certificate Services (AD CS) role.
+- Configure the Standalone Offline Root Certification Authority.
+- Configure the Authority Information Access (AIA) and CRL Distribution Point (CDP).
+- Export the Root CA certificate.
+- Transfer the Root CA certificate to the Enterprise Issuing CA.
 
 ---
+
+## Tasks
+
+### Step 1
+
+Install the **Active Directory Certificate Services** role on the **RootCA** server.
+
+### Step 2
+
+Configure the server as a **Standalone Root Certification Authority**.
+
+### Step 3
+
+Run the following script to configure the AIA and CDP locations.
+
+```cmd
+1-SetCDP_AIA.cmd
+```
+1-SetCDP_AIA.cmd
+```certutil -setreg CA\CRLPublicationURLs "1:C:\Windows\System32\CertSrv\CertEnroll\%3%8%9.crl\n2:http://pki.EgyptSystems.local/pki/%3%8%9.crl"
+
+certutil -setreg CA\CACertPublicationURLs "2:http://pki.EgyptSystems.local/pki/%1_%3%4.crt"
+
+net stop certsvc
+
+net start certsvc
+
+certutil -crl
+```
+### Step 4
+
+Run the following script to export the Root CA certificate.
+
+```cmd
+2-CopyRootCert.cmd
+```
+
+The exported certificate files will be copied to:
+
+```text
+C:\Export
+```
+
+### Step 5
+
+Copy the exported certificate files from:
+
+```text
+RootCA
+C:\Export
+```
+
+to
+
+```text
+IssuingCA
+C:\Import
+```
+
+---
+
+# Phase 2 - Configure Enterprise Issuing Certification Authority
+
+## Tasks
+
+### Step 1
+
+Import the Root CA certificate by running:
+
+```cmd
+3-DistRootCert.cmd
+```
+
+### Step 2
+
+Install the **Active Directory Certificate Services** role.
+
+### Step 3
+
+Configure the server as an **Enterprise Subordinate Certification Authority**.
+
+### Step 4
+
+Save the generated certificate request to a file.
+
+### Step 5
+
+Copy the certificate request file to the **RootCA** server.
+
+---
+
+# Phase 3 - Issue the Subordinate CA Certificate
+
+Open **Windows PowerShell** on the **RootCA** server.
+
+Run:
+
+```powershell
+certreq -submit IssuingCA.EgyptSystems.local_IssuingCA.req
+```
+
+Approve the pending request using the **Certification Authority** console.
+
+Issue the certificate.
+
+Copy the issued certificate back to the **IssuingCA** server.
+
+Complete the Enterprise Issuing CA configuration.
+
+
+
+
+
+
+
+---
+
+
+
 
 # Author
 
