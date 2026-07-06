@@ -419,7 +419,10 @@ C:\IssuingCA.EgyptSystems.local_IssuingCA.crt
 
 
 
+Copy the issued certificate back to the IssuingCA server under C/PKI/.
 Complete the Enterprise Issuing CA configuration.
+
+<img width="1326" height="923" alt="image" src="https://github.com/user-attachments/assets/4592dee2-130e-4d85-8819-b5a53ffa3f53" />
 
 ---
 
