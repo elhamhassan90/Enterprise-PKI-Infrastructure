@@ -363,6 +363,12 @@ Approve the pending request using the **Certification Authority** console.
 
 Issue the certificate.
 <img width="1632" height="878" alt="image" src="https://github.com/user-attachments/assets/72091290-b3a2-4755-abfc-4493f5a00449" />
+<img width="1632" height="878" alt="image" src="https://github.com/user-attachments/assets/1791051a-938d-443c-a2bf-bc86ddbce751" />
+
+======================================
+
+
+<img width="1581" height="922" alt="image" src="https://github.com/user-attachments/assets/fae81d92-cf6f-4e16-b02e-9b494ae0f40e" />
 
 Copy the issued certificate back to the **IssuingCA** server.
 
