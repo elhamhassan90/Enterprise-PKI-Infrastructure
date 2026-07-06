@@ -315,6 +315,13 @@ Import the Root CA certificate by running:
 ```cmd
 3-DistRootCert.cmd
 ```
+```
+certutil -dspublish -f c:\import\RootCA_ROOTCA-CA.crt rootCA 
+certutil -addstore -f root c:\import\RootCA_ROOTCA-CA.crt 
+certutil -addstore -f root c:\import\ROOTCA-CA.crl
+pause
+```
+
 
 ### Step 2
 
