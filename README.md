@@ -266,6 +266,10 @@ net start certsvc
 
 certutil -crl
 ```
+
+***The Result :
+<img width="1028" height="951" alt="image" src="https://github.com/user-attachments/assets/8de6ebd5-ae03-4482-b69f-bf95cbcaa6e3" />
+
 ### Step 4
 
 Run the following script to export the Root CA certificate.
