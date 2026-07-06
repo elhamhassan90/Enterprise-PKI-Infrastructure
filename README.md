@@ -335,6 +335,8 @@ Install the **Active Directory Certificate Services** role.
 ### Step 3
 
 Configure the server as an **Enterprise Subordinate Certification Authority**.
+<img width="1630" height="917" alt="image" src="https://github.com/user-attachments/assets/6f650512-3bb6-4054-9438-53e878d65f82" />
+
 
 ### Step 4
 
@@ -355,10 +357,12 @@ Run:
 ```powershell
 certreq -submit IssuingCA.EgyptSystems.local_IssuingCA.req
 ```
+<img width="1507" height="916" alt="image" src="https://github.com/user-attachments/assets/71fd96d6-4a06-4451-89d3-63629e848751" />
 
 Approve the pending request using the **Certification Authority** console.
 
 Issue the certificate.
+<img width="1632" height="878" alt="image" src="https://github.com/user-attachments/assets/72091290-b3a2-4755-abfc-4493f5a00449" />
 
 Copy the issued certificate back to the **IssuingCA** server.
 
