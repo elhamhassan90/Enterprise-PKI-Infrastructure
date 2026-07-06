@@ -163,6 +163,9 @@ Enterprise-PKI-Infrastructure/
 # Screenshots
 
 Project screenshots will be added during each deployment phase.
+<img width="1622" height="877" alt="image" src="https://github.com/user-attachments/assets/cfaba09d-9a84-4af7-b897-695efc996bc1" />
+<img width="1612" height="916" alt="image" src="https://github.com/user-attachments/assets/d8e2aa0e-259a-49f0-818c-e7bd60228dad" />
+
 
 ---
 
