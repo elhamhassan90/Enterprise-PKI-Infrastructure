@@ -273,6 +273,12 @@ Run the following script to export the Root CA certificate.
 ```cmd
 2-CopyRootCert.cmd
 ```
+--------------------------------------------
+```
+dir C:\Windows\System32\CertSrv\CertEnroll\*.cr*
+pause
+xcopy C:\Windows\System32\CertSrv\CertEnroll\*.cr* c:\export
+```
 
 The exported certificate files will be copied to:
 
