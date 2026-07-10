@@ -458,6 +458,8 @@ add the server group instead of specializing IIS server or genralizing Domain Co
 
 <img width="1612" height="923" alt="image" src="https://github.com/user-attachments/assets/acf6a4bf-7b35-4cdd-8098-91e9d8efae88" />
 
+<img width="1632" height="878" alt="image" src="https://github.com/user-attachments/assets/fcc7dfdd-1bc3-4904-a7bc-23049570a2ab" />
+
 
 ON IIS Server we can request certificate 
 
