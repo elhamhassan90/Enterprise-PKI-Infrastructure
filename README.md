@@ -429,6 +429,13 @@ Complete the Enterprise Issuing CA configuration.
 
 ---
 
+New Server And Installing IIS on it 
+Befoe Installing Certificate 
+It opens Http and doesn't open https
+
+<img width="1610" height="917" alt="image" src="https://github.com/user-attachments/assets/ca330858-f568-480f-9f42-8b1305853a31" />
+
+<img width="1633" height="917" alt="image" src="https://github.com/user-attachments/assets/5cde8804-bf8b-47a9-80e2-8a0de7f7ddf7" />
 
 
 
