@@ -809,6 +809,102 @@ Once you understand this workflow, you no longer need to memorize the steps. You
 
 ===================================================================================================================================================
 ===================================================================================================================================================
+
+# Certificate Enrollment Scenarios
+
+To better understand how certificates are requested and deployed in different environments, this project demonstrates **two certificate enrollment methods** using two separate IIS web servers.
+
+The goal is not only to deploy SSL certificates but also to understand how each enrollment method works behind the scenes.
+
+---
+
+## Scenario 1 – Automatic Certificate Enrollment (Domain Integrated)
+
+
+## Scenario 2 – Manual Certificate Enrollment
+
+**Server**
+
+- IIS (Joined to Active Directory)
+
+**Enrollment Method**
+
+- Create Certificate Request
+
+**Description**
+
+This server demonstrates the manual certificate enrollment process.
+
+Instead of communicating directly with the Enterprise CA, IIS only generates:
+
+- A Private Key (stored securely on the server)
+- A Certificate Signing Request (CSR)
+
+The CSR file is then manually copied to the Enterprise Issuing CA.
+
+The Enterprise CA signs the request and generates the certificate.
+
+The signed certificate is then manually copied back to the IIS server and imported using:
+
+**Complete Certificate Request**
+
+After the certificate is installed, it is bound to the IIS website to enable HTTPS.
+
+**Purpose**
+
+This method is commonly used when:
+
+- The Certification Authority is offline.
+- The certificate is issued by a third-party CA.
+- Security policies require manual approval.
+- Servers cannot communicate directly with the Enterprise CA.
+
+---
+
+**Server**
+
+- IIS2 (Joined to Active Directory)
+
+**Enrollment Method**
+
+- Create Domain Certificate
+
+**Description**
+
+This server demonstrates the enterprise certificate enrollment process.
+
+Since the server is joined to the Active Directory domain and communicates directly with the Enterprise Issuing CA, IIS automatically:
+
+1. Generates a private key locally.
+2. Creates a Certificate Signing Request (CSR).
+3. Sends the request directly to the Enterprise Issuing CA.
+4. Receives the signed certificate.
+5. Installs the certificate into the Local Computer Certificate Store.
+
+Finally, the certificate is bound to the IIS website to enable HTTPS.
+
+**Purpose**
+
+This is the method most commonly used in enterprise environments where servers are domain-joined and integrated with Active Directory Certificate Services (AD CS).
+
+---
+
+
+
+
+# Why Demonstrate Both Methods?
+
+Understanding both enrollment methods provides a deeper understanding of how Public Key Infrastructure (PKI) operates in real enterprise environments.
+
+The automatic enrollment method demonstrates the convenience of Active Directory integration, while the manual enrollment method explains the complete certificate lifecycle—from generating a CSR to importing the signed certificate.
+
+By implementing both approaches, this project reflects real-world enterprise scenarios rather than focusing on a single deployment method.
+
+============================================================================================
+============================================================================================
+
+
+
 # Author
 
 **Elham Hasan**
