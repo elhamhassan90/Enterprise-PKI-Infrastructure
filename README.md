@@ -902,7 +902,21 @@ By implementing both approaches, this project reflects real-world enterprise sce
 
 ============================================================================================
 ============================================================================================
+ON IIS Befoe Installing Certificate 
+It opens Http and doesn't open https
 
+<img width="1610" height="917" alt="image" src="https://github.com/user-attachments/assets/ca330858-f568-480f-9f42-8b1305853a31" />
+
+<img width="1633" height="917" alt="image" src="https://github.com/user-attachments/assets/5cde8804-bf8b-47a9-80e2-8a0de7f7ddf7" />
+
+####### Steps for adding certificate on IIS Server via (Create Domain Certificate)
+
+ON IIS2 Before Installing Certificate 
+<img width="1388" height="936" alt="image" src="https://github.com/user-attachments/assets/a4c33842-c344-4e17-ac79-c93a7ed691fd" />
+
+<img width="1110" height="923" alt="image" src="https://github.com/user-attachments/assets/60842109-7374-45b3-a002-0b5ea888eef1" />
+
+####### Steps for adding certificate on IIS2 via (Create Domain Certificate)
 
 
 # Author
