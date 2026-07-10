@@ -444,6 +444,15 @@ choose web server and duplicate template
 
 <img width="1632" height="878" alt="image" src="https://github.com/user-attachments/assets/3ec6da24-0588-43c3-8f1e-dcac9d8d53b8" />
 
+<img width="1625" height="912" alt="image" src="https://github.com/user-attachments/assets/57cbc8d3-d40e-40c9-b83f-bf52c1c5d46c" />
+
+<img width="1632" height="878" alt="image" src="https://github.com/user-attachments/assets/82326f9b-cab2-442e-9e25-e7c9fb51d698" />
+
+<img width="1632" height="878" alt="image" src="https://github.com/user-attachments/assets/e4e2e8f2-33fc-4e34-8799-07baad72727c" />
+
+<img width="1277" height="917" alt="image" src="https://github.com/user-attachments/assets/d1cda517-b182-4731-8cda-adbc43d84dfa" />
+
+ON IIS Server we can request certificate 
 
 # Author
 
