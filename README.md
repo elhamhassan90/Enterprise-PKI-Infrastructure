@@ -458,6 +458,11 @@ add the server group instead of specializing IIS server or genralizing Domain Co
 
 <img width="1612" height="923" alt="image" src="https://github.com/user-attachments/assets/acf6a4bf-7b35-4cdd-8098-91e9d8efae88" />
 
+################ -xxxxxxxxxx--
+
+<img width="1237" height="927" alt="image" src="https://github.com/user-attachments/assets/5c71feef-04a3-48ea-b871-fab32feb32a4" />
+
+
 <img width="1632" height="878" alt="image" src="https://github.com/user-attachments/assets/fcc7dfdd-1bc3-4904-a7bc-23049570a2ab" />
 
 
@@ -910,6 +915,8 @@ It opens Http and doesn't open https
 <img width="1633" height="917" alt="image" src="https://github.com/user-attachments/assets/5cde8804-bf8b-47a9-80e2-8a0de7f7ddf7" />
 
 ####### Steps for adding certificate on IIS Server via (Create Domain Certificate)
+
+
 
 ON IIS2 Before Installing Certificate 
 <img width="1388" height="936" alt="image" src="https://github.com/user-attachments/assets/a4c33842-c344-4e17-ac79-c93a7ed691fd" />
