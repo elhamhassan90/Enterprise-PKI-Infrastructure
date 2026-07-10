@@ -437,7 +437,7 @@ It opens Http and doesn't open https
 
 <img width="1633" height="917" alt="image" src="https://github.com/user-attachments/assets/5cde8804-bf8b-47a9-80e2-8a0de7f7ddf7" />
 
-from run "certtmpl.msc"
+On IssuingCA server from run "certtmpl.msc"
 choose web server and duplicate template 
 
 <img width="1632" height="878" alt="image" src="https://github.com/user-attachments/assets/cfab2e3c-f7f7-4b8f-b746-c8c9bdc8bddb" />
