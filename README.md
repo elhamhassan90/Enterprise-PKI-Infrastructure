@@ -452,7 +452,15 @@ choose web server and duplicate template
 
 <img width="1277" height="917" alt="image" src="https://github.com/user-attachments/assets/d1cda517-b182-4731-8cda-adbc43d84dfa" />
 
+
+========================================
+add the server group instead of specializing IIS server or genralizing Domain Computers 
+
+<img width="1612" height="923" alt="image" src="https://github.com/user-attachments/assets/acf6a4bf-7b35-4cdd-8098-91e9d8efae88" />
+
+
 ON IIS Server we can request certificate 
+
 
 # Author
 
