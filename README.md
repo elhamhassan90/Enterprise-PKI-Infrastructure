@@ -424,6 +424,9 @@ Complete the Enterprise Issuing CA configuration.
 
 <img width="1326" height="923" alt="image" src="https://github.com/user-attachments/assets/4592dee2-130e-4d85-8819-b5a53ffa3f53" />
 
+
+<img width="1286" height="922" alt="image" src="https://github.com/user-attachments/assets/e8fba6a6-0821-452a-81ac-6056da1c623b" />
+
 ---
 
 
