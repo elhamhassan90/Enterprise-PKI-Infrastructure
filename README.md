@@ -19,7 +19,7 @@ The project also demonstrates two different certificate enrollment methods:
 By implementing both methods, this project explains how certificate enrollment works internally and how enterprises issue and manage SSL/TLS certificates for internal services.
 
 ---
-
+```
 Project Overview
 │
 ├── Project Goals
@@ -39,7 +39,7 @@ Project Overview
 ├── Phase 6 - IIS2 Server (Domain Certificate)
 ├── Phase 7 - HTTPS Verification
 └── Conclusion
-
+```
 # Project Goals
 
 - Build a complete Enterprise PKI Infrastructure
