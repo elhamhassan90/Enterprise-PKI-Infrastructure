@@ -1,4 +1,4 @@
-# Enterprise-PKI-Infrastructure
+<img width="1463" height="645" alt="image" src="https://github.com/user-attachments/assets/63edec76-d3b6-492d-8d40-e333971f5909" /># Enterprise-PKI-Infrastructure
 Enterprise-PKI-Infrastructure
 
 
@@ -910,12 +910,55 @@ By implementing both approaches, this project reflects real-world enterprise sce
 ON IIS Befoe Installing Certificate 
 It opens Http and doesn't open https
 
-<img width="1610" height="917" alt="image" src="https://github.com/user-attachments/assets/ca330858-f568-480f-9f42-8b1305853a31" />
+<img width="1372" height="927" alt="image" src="https://github.com/user-attachments/assets/3ab990fa-a785-478d-83ee-87c1b4399af3" />
 
-<img width="1633" height="917" alt="image" src="https://github.com/user-attachments/assets/5cde8804-bf8b-47a9-80e2-8a0de7f7ddf7" />
+<img width="1162" height="932" alt="image" src="https://github.com/user-attachments/assets/cf76b4fb-b5a2-4023-bec5-e5cc694d7582" />
 
-####### Steps for adding certificate on IIS Server via (Create Domain Certificate)
 
+                 IIS Server
+
+                      │
+                      │
+        Create Certificate Request
+                      │
+                      ▼
+        Generate Private Key 🔑
+                      │
+                      ▼
+            Generate CSR (.req)
+                      │
+          (Nothing is sent yet)
+                      │
+          Copy the .req file manually
+                      │
+                      ▼
+              Enterprise Issuing CA
+                      │
+            certreq -submit request
+                      │
+                      ▼
+             Certificate Issued (.cer)
+
+
+
+IIS (Server Name) --> Server Certificates --> Create Certificate Request --> Save File in C:\IIS_Request.req  and copy it to the IssuingCA server  
+
+####### Steps for adding certificate on IIS Server via (Create Certificate Request)
+
+<img width="1497" height="820" alt="image" src="https://github.com/user-attachments/assets/c5837340-708f-4caf-859a-ced50ba4729b" />
+
+ON IssuingCA Server Execute this PowerShell Command 
+```
+certreq -submit -attrib "CertificateTemplate:_EGYPTSYSTEMSWebServer" C:\IIS_Request.req
+```
+<img width="1463" height="645" alt="image" src="https://github.com/user-attachments/assets/6c39a358-8a21-4d3b-9dda-f5ed360810a7" />
+
+and Copy The Certificate Back to the IIS Server
+IIS (Server Name) --> Server Certificates --> Complete Certificate Request --> Choose Certificate File (*.cer)
+
+<img width="1597" height="788" alt="image" src="https://github.com/user-attachments/assets/4f583059-47c2-4676-98a9-42b2c0e3dbc7" />
+
+IIS (Server Name) --> Server Certificates --> Edit Binding -->
 
 
 ON IIS2 Before Installing Certificate 
