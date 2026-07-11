@@ -39,7 +39,6 @@ Project Overview
 ├── Phase 6 - IIS2 Server (Domain Certificate)
 ├── Phase 7 - HTTPS Verification
 └── Conclusion
----
 
 # Project Goals
 
