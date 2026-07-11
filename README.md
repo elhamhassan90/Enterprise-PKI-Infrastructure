@@ -18,6 +18,25 @@ The project also demonstrates two different certificate enrollment methods:
 
 By implementing both methods, this project explains how certificate enrollment works internally and how enterprises issue and manage SSL/TLS certificates for internal services.
 
+Project Overview
+│
+├── Project Goals
+├── Infrastructure
+├── Active Directory Information
+├── PKI Architecture
+├── Certificate Enrollment Methods
+├── Technologies Used
+│
+├──────────────────────────────
+│
+├── Phase 1 - Deploy Active Directory
+├── Phase 2 - Install Offline Root CA
+├── Phase 3 - Install Issuing CA
+├── Phase 4 - Configure Certificate Templates
+├── Phase 5 - IIS Server (Manual Request)
+├── Phase 6 - IIS2 Server (Domain Certificate)
+├── Phase 7 - HTTPS Verification
+└── Conclusion
 ---
 
 # Project Goals
