@@ -1,54 +1,64 @@
 <img width="1463" height="645" alt="image" src="https://github.com/user-attachments/assets/63edec76-d3b6-492d-8d40-e333971f5909" /># Enterprise-PKI-Infrastructure
 Enterprise-PKI-Infrastructure
+=========================
+=========================
 
+# Enterprise Public Key Infrastructure (PKI) with Microsoft AD CS & IIS HTTPS
 
-# Enterprise PKI Infrastructure
+## Project Overview
 
-A production-style Microsoft Active Directory Certificate Services (AD CS) project that demonstrates how to design, deploy, secure, and manage a complete two-tier Public Key Infrastructure (PKI) environment for enterprise organizations.
+This project demonstrates the design and implementation of a complete Enterprise Public Key Infrastructure (PKI) using Microsoft Active Directory Certificate Services (AD CS).
 
-This project follows industry best practices by implementing an Offline Root Certification Authority and an Enterprise Issuing Certification Authority integrated with Active Directory. Every configuration is documented step by step to simulate a real-world enterprise deployment.
+The infrastructure includes an Offline Root Certification Authority, an Enterprise Subordinate (Issuing) Certification Authority, custom certificate templates, Active Directory integration, and secure HTTPS deployment for IIS web servers.
 
----
+The project also demonstrates two different certificate enrollment methods:
 
-# Project Objectives
+- Manual Certificate Enrollment (CSR → Issue → Import)
+- Active Directory Domain Certificate Enrollment
 
-- Build a secure Enterprise Public Key Infrastructure (PKI)
-- Deploy an Offline Standalone Root CA
-- Deploy an Enterprise Issuing CA
-- Integrate AD CS with Active Directory
-- Configure Certificate Revocation Lists (CRL)
-- Configure Authority Information Access (AIA)
-- Configure CRL Distribution Points (CDP)
-- Publish the Root Certificate
-- Configure Certificate Templates
-- Enable Certificate Auto Enrollment
-- Issue certificates for Users, Computers, Servers and Services
-- Configure HTTPS certificates
-- Implement Certificate Renewal
-- Implement Certificate Revocation
-- Backup and Restore Certification Authorities
-- Follow Enterprise Security Best Practices
+By implementing both methods, this project explains how certificate enrollment works internally and how enterprises issue and manage SSL/TLS certificates for internal services.
 
 ---
 
-# Infrastructure Overview
+# Project Goals
 
-## Domain
-
-```text
-EgyptSystems.local
-```
-
-## Servers
-
-| Server | Role | IP Address | Domain Joined |
-|---------|------|------------|---------------|
-| AD | Domain Controller | 192.168.100.10 | ✅ |
-| RootCA | Offline Standalone Root Certification Authority | 192.168.100.20 | ❌ |
-| IssuingCA | Enterprise Issuing Certification Authority | 192.168.100.21 | ✅ |
+- Build a complete Enterprise PKI Infrastructure
+- Deploy an Offline Root Certification Authority
+- Deploy an Enterprise Subordinate Certification Authority
+- Configure Active Directory Certificate Services (AD CS)
+- Create and Publish Custom Certificate Templates
+- Secure IIS Websites using HTTPS
+- Understand the complete Certificate Lifecycle
+- Compare Manual Certificate Enrollment with Domain Certificate Enrollment
+- Simulate a real enterprise PKI deployment
 
 ---
 
+# Infrastructure
+
+| Server | Hostname | IP Address | Role |
+|---------|----------|-----------|------|
+| DC | DC.egyptsystems.local | 192.168.100.10 | Active Directory Domain Controller & DNS |
+| Root CA | ROOTCA | 192.168.100.20 | Offline Standalone Root Certification Authority |
+| Issuing CA | IssuingCA.egyptsystems.local | 192.168.100.30 | Enterprise Subordinate Certification Authority |
+| IIS Server | IIS.egyptsystems.local | 192.168.100.32 | IIS Web Server (Manual Certificate Enrollment) |
+| IIS2 Server | IIS2.egyptsystems.local | 192.168.100.33 | IIS Web Server (Domain Certificate Enrollment) |
+
+> **Note:** Replace the IP addresses above if your environment uses different addresses.
+
+---
+
+# Active Directory Information
+
+| Item | Value |
+|------|-------|
+| Domain Name | egyptsystems.local |
+| Forest Functional Level | Windows Server 2019 |
+| DNS | Active Directory Integrated |
+| Enterprise CA | egyptsystems-ISSUINGCA-CA-2 |
+| Root CA | ROOTCA-CA |
+
+---
 # PKI Architecture
 
 ```text
@@ -68,97 +78,87 @@ EgyptSystems.local
                            │
        Users • Computers • Servers • Services
 ```
+# Certificate Enrollment Methods
+
+This project demonstrates two different approaches for requesting SSL/TLS certificates.
+
+### Method 1 — Manual Certificate Enrollment
+
+The certificate request is generated manually from IIS.
+
+Workflow:
+
+Create Certificate Request (CSR)
+
+↓
+
+Submit Request to Enterprise CA
+
+↓
+
+Issue Certificate
+
+↓
+
+Complete Certificate Request
+
+↓
+
+Configure HTTPS Binding
+
+This approach explains how IIS communicates with AD CS manually and how the private key remains on the web server during the certificate enrollment process.
 
 ---
 
-# Technologies
+### Method 2 — Active Directory Certificate Enrollment
 
-- Windows Server
-- Active Directory Domain Services
+The second IIS server requests its certificate directly from the Enterprise Certification Authority using Active Directory integration.
+
+Workflow:
+
+Create Domain Certificate
+
+↓
+
+Enterprise CA
+
+↓
+
+Certificate Issued Automatically
+
+↓
+
+HTTPS Binding
+
+This method is commonly used in enterprise environments because it simplifies certificate deployment and management.
+
+---
+
+# Technologies Used
+
+- Windows Server 2019
+- Active Directory Domain Services (AD DS)
 - Active Directory Certificate Services (AD CS)
+- Enterprise PKI
+- Offline Root CA
+- Enterprise Issuing CA
+- IIS (Internet Information Services)
+- SSL/TLS
+- HTTPS
+- Certificate Templates
 - DNS
 - Group Policy
-- PowerShell
-- MMC
-- PKIView
-- Certification Authority Console
-- Certificate Templates Console
+
+
+==========================
+==========================
+# Enterprise PKI Infrastructure
+
+
+
 
 ---
 
-# Security Features
-
-- Offline Root Certification Authority
-- Enterprise Issuing Certification Authority
-- Certificate Chain Validation
-- Certificate Revocation
-- Private Key Protection
-- Least Privilege Administration
-- Backup and Recovery Strategy
-- Enterprise Security Best Practices
-
----
-
-# Project Implementation
-
-- [ ] Configure Active Directory
-- [ ] Configure DNS
-- [ ] Configure Static IP Addresses
-- [ ] Install Active Directory Certificate Services
-- [ ] Configure Offline Root CA
-- [ ] Configure Enterprise Issuing CA
-- [ ] Publish Root Certificate
-- [ ] Configure CRL Distribution Points (CDP)
-- [ ] Configure Authority Information Access (AIA)
-- [ ] Publish Certificate Revocation Lists
-- [ ] Create Custom Certificate Templates
-- [ ] Configure Certificate Auto Enrollment
-- [ ] Deploy User Certificates
-- [ ] Deploy Computer Certificates
-- [ ] Deploy Web Server Certificates
-- [ ] Configure HTTPS
-- [ ] Validate Certificate Trust Chain
-- [ ] Revoke Certificates
-- [ ] Renew Certificates
-- [ ] Backup Certification Authorities
-- [ ] Restore Certification Authorities
-- [ ] Validate Enterprise PKI Health
-
----
-
-# Repository Structure
-
-```text
-Enterprise-PKI-Infrastructure/
-│
-├── README.md
-├── Documentation/
-├── PowerShell/
-├── Screenshots/
-├── Certificate-Templates/
-├── Group-Policy/
-├── Certificates/
-├── CRL/
-├── Backup/
-└── Diagrams/
-```
-
----
-
-# Project Progress
-
-| Component | Status |
-|----------|--------|
-| Active Directory | ⏳ |
-| Offline Root CA | ⏳ |
-| Enterprise Issuing CA | ⏳ |
-| Certificate Templates | ⏳ |
-| Auto Enrollment | ⏳ |
-| CRL & AIA | ⏳ |
-| HTTPS Certificates | ⏳ |
-| Backup & Recovery | ⏳ |
-
----
 # Phase 1 - Offline Root Certification Authority
 
 - Install Active Directory Certificate Services (AD CS)
