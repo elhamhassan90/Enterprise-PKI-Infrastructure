@@ -977,12 +977,40 @@ After Adding Certificate
 ===============================================================
 ===============================================================
 
-ON IIS2 Before Installing Certificate 
-<img width="1388" height="936" alt="image" src="https://github.com/user-attachments/assets/a4c33842-c344-4e17-ac79-c93a7ed691fd" />
 
-<img width="1110" height="923" alt="image" src="https://github.com/user-attachments/assets/60842109-7374-45b3-a002-0b5ea888eef1" />
+ON IIS2 Before Installing Certificate 
+
+<img width="1487" height="922" alt="image" src="https://github.com/user-attachments/assets/1d5033a0-db04-40c2-842b-af5fd32eb43f" />
+
+<img width="1472" height="927" alt="image" src="https://github.com/user-attachments/assets/d7f5c0c4-7d8d-4091-8882-42b3de79f10d" />
+
 
 ####### Steps for adding certificate on IIS2 via (Create Domain Certificate)
+
+IIS2 (Server Name) --> Server Certificates --> Create Domain Certificate --> Common Name: (iis2.egyptsystems.local)
+
+<img width="1682" height="826" alt="image" src="https://github.com/user-attachments/assets/8b529f6e-8384-445a-9547-836d3cf19c8a" />
+
+<img width="1498" height="810" alt="image" src="https://github.com/user-attachments/assets/f0e58af1-c084-4429-a3e0-e74097ad637f" />
+
+<img width="1523" height="822" alt="image" src="https://github.com/user-attachments/assets/ad1b8961-c1ca-40b1-b93e-98a8a579674d" />
+
+<img width="1487" height="812" alt="image" src="https://github.com/user-attachments/assets/99a4f6f7-be34-49d4-a840-03ab1ca58bec" />
+
+IIS2 (Server Name) --> Server Certificates --> Edit Binding --> Add --> https
+
+<img width="1487" height="812" alt="image" src="https://github.com/user-attachments/assets/987445e6-46d7-4d0c-aacc-9ad93957dfd6" />
+
+IIS (Server Name) --> Server Certificates --> SSL Setting --> Enable Require SSL
+
+<img width="1682" height="805" alt="image" src="https://github.com/user-attachments/assets/f0a89abd-182a-40e3-b083-e40affe8e786" />
+
+After Adding Certificate
+
+<img width="1547" height="835" alt="image" src="https://github.com/user-attachments/assets/76e74c7b-b5ee-4cf2-a5d9-9c4b9f2e8b78" />
+
+<img width="1226" height="787" alt="image" src="https://github.com/user-attachments/assets/ccdcd533-3e32-4971-9113-ac487b921f3f" />
+
 
 
 # Author
