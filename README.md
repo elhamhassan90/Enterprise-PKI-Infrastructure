@@ -958,8 +958,24 @@ IIS (Server Name) --> Server Certificates --> Complete Certificate Request --> C
 
 <img width="1597" height="788" alt="image" src="https://github.com/user-attachments/assets/4f583059-47c2-4676-98a9-42b2c0e3dbc7" />
 
-IIS (Server Name) --> Server Certificates --> Edit Binding -->
+IIS (Server Name) --> Server Certificates --> Edit Binding --> Add --> https
 
+<img width="1460" height="922" alt="image" src="https://github.com/user-attachments/assets/8951aaf5-bc7d-4b8c-8041-76bb0bd02bb9" />
+
+IIS (Server Name) --> Server Certificates --> SSL Setting --> Enable Require SSL
+
+<img width="1415" height="927" alt="image" src="https://github.com/user-attachments/assets/6adf5522-eaf2-48a9-9087-2691f1d771b8" />
+
+After Adding Certificate
+
+<img width="1691" height="827" alt="image" src="https://github.com/user-attachments/assets/a2cc94b7-1318-428a-abda-6844b3961082" />
+
+
+<img width="1572" height="818" alt="image" src="https://github.com/user-attachments/assets/7a0edf46-fa27-467d-8fd4-3f1adba7a5e4" />
+
+
+===============================================================
+===============================================================
 
 ON IIS2 Before Installing Certificate 
 <img width="1388" height="936" alt="image" src="https://github.com/user-attachments/assets/a4c33842-c344-4e17-ac79-c93a7ed691fd" />
