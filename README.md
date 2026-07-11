@@ -18,6 +18,8 @@ The project also demonstrates two different certificate enrollment methods:
 
 By implementing both methods, this project explains how certificate enrollment works internally and how enterprises issue and manage SSL/TLS certificates for internal services.
 
+---
+
 Project Overview
 │
 ├── Project Goals
